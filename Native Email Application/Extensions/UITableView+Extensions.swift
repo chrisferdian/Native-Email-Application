@@ -13,17 +13,17 @@ public extension UITableView {
         let nib = UINib(nibName: className, bundle: bundle)
         register(nib, forCellReuseIdentifier: className)
     }
-
+    
     func register<T: UITableViewCell>(cellTypes: [T.Type], bundle: Bundle? = nil) {
         cellTypes.forEach { register(cellType: $0, bundle: bundle) }
     }
-
+    
     func dequeueReusableCell<T: UITableViewCell>(with type: T.Type, for indexPath: IndexPath) -> T {
         return self.dequeueReusableCell(withIdentifier: type.className, for: indexPath) as! T
     }
     
     func scrollToBottom(){
-
+        
         DispatchQueue.main.async {
             let indexPath = IndexPath(
                 row: self.numberOfRows(inSection: self.numberOfSections - 1) - 1,
@@ -33,14 +33,18 @@ public extension UITableView {
     }
     
     internal func setStateView(with state: ListProcessingState, _ completion: (() -> Void)? = nil) {
-        tableFooterView = UIView()
+        DispatchQueue.main.async {
+            if self.tableFooterView == nil {
+                self.tableFooterView = UIView()
+            }
+        }
         switch state {
         case .success:
             self.backgroundView = nil
             return
         case .empty:
-                guard let stateView = Bundle.main.loadNibNamed("EmptyStateView", owner: self, options: nil)?.first as? EmptyStateView else { return }
-                self.backgroundView = stateView
+            guard let stateView = Bundle.main.loadNibNamed("EmptyStateView", owner: self, options: nil)?.first as? EmptyStateView else { return }
+            self.backgroundView = stateView
         case .retry:
             guard let stateView = Bundle.main.loadNibNamed("RetryStateView", owner: self, options: nil)?.first as? RetryStateView else { return }
             self.backgroundView = stateView

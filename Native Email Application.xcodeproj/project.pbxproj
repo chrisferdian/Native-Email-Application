@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		E97D8FBB2535907E004DFB13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97D8FBA2535907E004DFB13 /* AppDelegate.swift */; };
 		E97D8FBD2535907E004DFB13 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97D8FBC2535907E004DFB13 /* SceneDelegate.swift */; };
-		E97D8FBF2535907E004DFB13 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97D8FBE2535907E004DFB13 /* ViewController.swift */; };
 		E97D8FC22535907E004DFB13 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E97D8FC02535907E004DFB13 /* Main.storyboard */; };
 		E97D8FC52535907E004DFB13 /* Native_Email_Application.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E97D8FC32535907E004DFB13 /* Native_Email_Application.xcdatamodeld */; };
 		E97D8FC725359081004DFB13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E97D8FC625359081004DFB13 /* Assets.xcassets */; };
@@ -24,6 +23,14 @@
 		E9C90DE92536EA7500D02A56 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C90DE82536EA7500D02A56 /* EmptyStateView.swift */; };
 		E9C90DEE2536EC4000D02A56 /* RetryStateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9C90DED2536EC4000D02A56 /* RetryStateView.xib */; };
 		E9C90DF32536EDA700D02A56 /* RetryStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C90DF22536EDA700D02A56 /* RetryStateView.swift */; };
+		E9C90DF825370BAE00D02A56 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C90DF725370BAE00D02A56 /* Request.swift */; };
+		E9C90DFE25370D4E00D02A56 /* EmailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C90DFD25370D4E00D02A56 /* EmailResponse.swift */; };
+		E9C90E0B25373FDB00D02A56 /* EmailListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C90E0925373FDB00D02A56 /* EmailListVC.swift */; };
+		E9C90E0C25373FDB00D02A56 /* EmailListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9C90E0A25373FDB00D02A56 /* EmailListVC.xib */; };
+		E9C90E1425373FEF00D02A56 /* EmailListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C90E1325373FEF00D02A56 /* EmailListVM.swift */; };
+		E9C90E192537407300D02A56 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C90E182537407300D02A56 /* BaseViewModel.swift */; };
+		E9C90E202537468B00D02A56 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C90E1E2537468B00D02A56 /* ListTableViewCell.swift */; };
+		E9C90E212537468B00D02A56 /* ListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9C90E1F2537468B00D02A56 /* ListTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +54,6 @@
 		E97D8FB72535907E004DFB13 /* Native Email Application.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Native Email Application.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E97D8FBA2535907E004DFB13 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E97D8FBC2535907E004DFB13 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E97D8FBE2535907E004DFB13 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E97D8FC12535907E004DFB13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E97D8FC42535907E004DFB13 /* Native_Email_Application.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Native_Email_Application.xcdatamodel; sourceTree = "<group>"; };
 		E97D8FC625359081004DFB13 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -67,6 +73,14 @@
 		E9C90DE82536EA7500D02A56 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
 		E9C90DED2536EC4000D02A56 /* RetryStateView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RetryStateView.xib; sourceTree = "<group>"; };
 		E9C90DF22536EDA700D02A56 /* RetryStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetryStateView.swift; sourceTree = "<group>"; };
+		E9C90DF725370BAE00D02A56 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		E9C90DFD25370D4E00D02A56 /* EmailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailResponse.swift; sourceTree = "<group>"; };
+		E9C90E0925373FDB00D02A56 /* EmailListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailListVC.swift; sourceTree = "<group>"; };
+		E9C90E0A25373FDB00D02A56 /* EmailListVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmailListVC.xib; sourceTree = "<group>"; };
+		E9C90E1325373FEF00D02A56 /* EmailListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailListVM.swift; sourceTree = "<group>"; };
+		E9C90E182537407300D02A56 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		E9C90E1E2537468B00D02A56 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
+		E9C90E1F2537468B00D02A56 /* ListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,11 +131,11 @@
 		E97D8FB92535907E004DFB13 /* Native Email Application */ = {
 			isa = PBXGroup;
 			children = (
+				E9C90DFC25370D4000D02A56 /* Moduls */,
 				E9C90DC82536E74700D02A56 /* Extensions */,
 				E97D8FF5253594FF004DFB13 /* Helpers */,
 				E97D8FBA2535907E004DFB13 /* AppDelegate.swift */,
 				E97D8FBC2535907E004DFB13 /* SceneDelegate.swift */,
-				E97D8FBE2535907E004DFB13 /* ViewController.swift */,
 				E97D8FC02535907E004DFB13 /* Main.storyboard */,
 				E97D8FC625359081004DFB13 /* Assets.xcassets */,
 				E97D8FC825359081004DFB13 /* LaunchScreen.storyboard */,
@@ -155,6 +169,8 @@
 				E9C90DE22536EA0D00D02A56 /* RetryStateView */,
 				E9C90DE12536EA0200D02A56 /* EmptyStateView */,
 				E9C90DD62536E7FF00D02A56 /* LoadingStateView */,
+				E9C90DF725370BAE00D02A56 /* Request.swift */,
+				E9C90E182537407300D02A56 /* BaseViewModel.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -193,6 +209,35 @@
 				E9C90DF22536EDA700D02A56 /* RetryStateView.swift */,
 			);
 			path = RetryStateView;
+			sourceTree = "<group>";
+		};
+		E9C90DFC25370D4000D02A56 /* Moduls */ = {
+			isa = PBXGroup;
+			children = (
+				E9C90E0825373FAA00D02A56 /* Main */,
+			);
+			path = Moduls;
+			sourceTree = "<group>";
+		};
+		E9C90E0825373FAA00D02A56 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				E9C90E1D2537467500D02A56 /* ViewCell */,
+				E9C90DFD25370D4E00D02A56 /* EmailResponse.swift */,
+				E9C90E1325373FEF00D02A56 /* EmailListVM.swift */,
+				E9C90E0925373FDB00D02A56 /* EmailListVC.swift */,
+				E9C90E0A25373FDB00D02A56 /* EmailListVC.xib */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		E9C90E1D2537467500D02A56 /* ViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				E9C90E1E2537468B00D02A56 /* ListTableViewCell.swift */,
+				E9C90E1F2537468B00D02A56 /* ListTableViewCell.xib */,
+			);
+			path = ViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,8 +345,10 @@
 			files = (
 				E97D8FCA25359081004DFB13 /* LaunchScreen.storyboard in Resources */,
 				E9C90DE42536EA1D00D02A56 /* EmptyStateView.xib in Resources */,
+				E9C90E0C25373FDB00D02A56 /* EmailListVC.xib in Resources */,
 				E97D8FC725359081004DFB13 /* Assets.xcassets in Resources */,
 				E9C90DEE2536EC4000D02A56 /* RetryStateView.xib in Resources */,
+				E9C90E212537468B00D02A56 /* ListTableViewCell.xib in Resources */,
 				E97D8FC22535907E004DFB13 /* Main.storyboard in Resources */,
 				E9C90DD82536E80800D02A56 /* LoadingStateView.xib in Resources */,
 			);
@@ -329,14 +376,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9C90DCA2536E75C00D02A56 /* UITableView+Extensions.swift in Sources */,
-				E97D8FBF2535907E004DFB13 /* ViewController.swift in Sources */,
 				E9C90DE92536EA7500D02A56 /* EmptyStateView.swift in Sources */,
+				E9C90E192537407300D02A56 /* BaseViewModel.swift in Sources */,
 				E9C90DDD2536E8BE00D02A56 /* NSObject+Extensions.swift in Sources */,
+				E9C90E1425373FEF00D02A56 /* EmailListVM.swift in Sources */,
 				E97D8FBB2535907E004DFB13 /* AppDelegate.swift in Sources */,
+				E9C90E0B25373FDB00D02A56 /* EmailListVC.swift in Sources */,
 				E9C90DD22536E7FB00D02A56 /* LoadingStateView.swift in Sources */,
 				E9C90DF32536EDA700D02A56 /* RetryStateView.swift in Sources */,
+				E9C90DFE25370D4E00D02A56 /* EmailResponse.swift in Sources */,
+				E9C90DF825370BAE00D02A56 /* Request.swift in Sources */,
 				E97D8FC52535907E004DFB13 /* Native_Email_Application.xcdatamodeld in Sources */,
 				E97D8FBD2535907E004DFB13 /* SceneDelegate.swift in Sources */,
+				E9C90E202537468B00D02A56 /* ListTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
