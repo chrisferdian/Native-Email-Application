@@ -8,20 +8,24 @@
 import UIKit
 
 class EmailListVC: UIViewController {
-
+    
     @IBOutlet weak var tableView: UITableView!
     private let viewModel: EmailListVM = EmailListVM()
     private var emails: EmailResponse? = nil {
         didSet {
-            self.tableView.reloadData()
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         }
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
         bindViewModel()
     }
     private func setupTableView() {
+        self.tableView.register(cellType: ListTableViewCell.self)
         self.tableView.delegate = self
         self.tableView.dataSource = self
     }

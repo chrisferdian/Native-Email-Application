@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		E97D8FBB2535907E004DFB13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97D8FBA2535907E004DFB13 /* AppDelegate.swift */; };
 		E97D8FBD2535907E004DFB13 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97D8FBC2535907E004DFB13 /* SceneDelegate.swift */; };
-		E97D8FC22535907E004DFB13 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E97D8FC02535907E004DFB13 /* Main.storyboard */; };
 		E97D8FC52535907E004DFB13 /* Native_Email_Application.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E97D8FC32535907E004DFB13 /* Native_Email_Application.xcdatamodeld */; };
 		E97D8FC725359081004DFB13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E97D8FC625359081004DFB13 /* Assets.xcassets */; };
 		E97D8FCA25359081004DFB13 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E97D8FC825359081004DFB13 /* LaunchScreen.storyboard */; };
@@ -31,6 +30,10 @@
 		E9C90E192537407300D02A56 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C90E182537407300D02A56 /* BaseViewModel.swift */; };
 		E9C90E202537468B00D02A56 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C90E1E2537468B00D02A56 /* ListTableViewCell.swift */; };
 		E9C90E212537468B00D02A56 /* ListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9C90E1F2537468B00D02A56 /* ListTableViewCell.xib */; };
+		E9C90E2D2537480100D02A56 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C90E2C2537480000D02A56 /* Coordinator.swift */; };
+		E9C90E3B2537482A00D02A56 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C90E3A2537482A00D02A56 /* BaseCoordinator.swift */; };
+		E9C90E442537485100D02A56 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C90E432537485100D02A56 /* AppCoordinator.swift */; };
+		E9C90E49253748DC00D02A56 /* EmailListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C90E48253748DC00D02A56 /* EmailListCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +57,6 @@
 		E97D8FB72535907E004DFB13 /* Native Email Application.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Native Email Application.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E97D8FBA2535907E004DFB13 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E97D8FBC2535907E004DFB13 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E97D8FC12535907E004DFB13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E97D8FC42535907E004DFB13 /* Native_Email_Application.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Native_Email_Application.xcdatamodel; sourceTree = "<group>"; };
 		E97D8FC625359081004DFB13 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E97D8FC925359081004DFB13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -81,6 +83,10 @@
 		E9C90E182537407300D02A56 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		E9C90E1E2537468B00D02A56 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		E9C90E1F2537468B00D02A56 /* ListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListTableViewCell.xib; sourceTree = "<group>"; };
+		E9C90E2C2537480000D02A56 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		E9C90E3A2537482A00D02A56 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
+		E9C90E432537485100D02A56 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		E9C90E48253748DC00D02A56 /* EmailListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailListCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,12 +137,10 @@
 		E97D8FB92535907E004DFB13 /* Native Email Application */ = {
 			isa = PBXGroup;
 			children = (
+				E9C90E2B253747E600D02A56 /* Coordinator */,
 				E9C90DFC25370D4000D02A56 /* Moduls */,
 				E9C90DC82536E74700D02A56 /* Extensions */,
 				E97D8FF5253594FF004DFB13 /* Helpers */,
-				E97D8FBA2535907E004DFB13 /* AppDelegate.swift */,
-				E97D8FBC2535907E004DFB13 /* SceneDelegate.swift */,
-				E97D8FC02535907E004DFB13 /* Main.storyboard */,
 				E97D8FC625359081004DFB13 /* Assets.xcassets */,
 				E97D8FC825359081004DFB13 /* LaunchScreen.storyboard */,
 				E97D8FCB25359081004DFB13 /* Info.plist */,
@@ -222,6 +226,7 @@
 		E9C90E0825373FAA00D02A56 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				E9C90E48253748DC00D02A56 /* EmailListCoordinator.swift */,
 				E9C90E1D2537467500D02A56 /* ViewCell */,
 				E9C90DFD25370D4E00D02A56 /* EmailResponse.swift */,
 				E9C90E1325373FEF00D02A56 /* EmailListVM.swift */,
@@ -238,6 +243,18 @@
 				E9C90E1F2537468B00D02A56 /* ListTableViewCell.xib */,
 			);
 			path = ViewCell;
+			sourceTree = "<group>";
+		};
+		E9C90E2B253747E600D02A56 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				E9C90E2C2537480000D02A56 /* Coordinator.swift */,
+				E9C90E3A2537482A00D02A56 /* BaseCoordinator.swift */,
+				E97D8FBA2535907E004DFB13 /* AppDelegate.swift */,
+				E97D8FBC2535907E004DFB13 /* SceneDelegate.swift */,
+				E9C90E432537485100D02A56 /* AppCoordinator.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -349,7 +366,6 @@
 				E97D8FC725359081004DFB13 /* Assets.xcassets in Resources */,
 				E9C90DEE2536EC4000D02A56 /* RetryStateView.xib in Resources */,
 				E9C90E212537468B00D02A56 /* ListTableViewCell.xib in Resources */,
-				E97D8FC22535907E004DFB13 /* Main.storyboard in Resources */,
 				E9C90DD82536E80800D02A56 /* LoadingStateView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -377,6 +393,7 @@
 			files = (
 				E9C90DCA2536E75C00D02A56 /* UITableView+Extensions.swift in Sources */,
 				E9C90DE92536EA7500D02A56 /* EmptyStateView.swift in Sources */,
+				E9C90E442537485100D02A56 /* AppCoordinator.swift in Sources */,
 				E9C90E192537407300D02A56 /* BaseViewModel.swift in Sources */,
 				E9C90DDD2536E8BE00D02A56 /* NSObject+Extensions.swift in Sources */,
 				E9C90E1425373FEF00D02A56 /* EmailListVM.swift in Sources */,
@@ -387,8 +404,11 @@
 				E9C90DFE25370D4E00D02A56 /* EmailResponse.swift in Sources */,
 				E9C90DF825370BAE00D02A56 /* Request.swift in Sources */,
 				E97D8FC52535907E004DFB13 /* Native_Email_Application.xcdatamodeld in Sources */,
+				E9C90E49253748DC00D02A56 /* EmailListCoordinator.swift in Sources */,
+				E9C90E2D2537480100D02A56 /* Coordinator.swift in Sources */,
 				E97D8FBD2535907E004DFB13 /* SceneDelegate.swift in Sources */,
 				E9C90E202537468B00D02A56 /* ListTableViewCell.swift in Sources */,
+				E9C90E3B2537482A00D02A56 /* BaseCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,14 +444,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		E97D8FC02535907E004DFB13 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E97D8FC12535907E004DFB13 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		E97D8FC825359081004DFB13 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
