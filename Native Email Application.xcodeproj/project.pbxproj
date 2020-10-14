@@ -16,8 +16,6 @@
 		E97D8FCA25359081004DFB13 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E97D8FC825359081004DFB13 /* LaunchScreen.storyboard */; };
 		E97D8FD525359081004DFB13 /* Native_Email_ApplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97D8FD425359081004DFB13 /* Native_Email_ApplicationTests.swift */; };
 		E97D8FE025359081004DFB13 /* Native_Email_ApplicationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97D8FDF25359081004DFB13 /* Native_Email_ApplicationUITests.swift */; };
-		E97D8FF725359514004DFB13 /* DummiesHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97D8FF625359514004DFB13 /* DummiesHelper.swift */; };
-		E97D8FFF2535971E004DFB13 /* CDHelperEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97D8FFE2535971E004DFB13 /* CDHelperEntity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,8 +51,6 @@
 		E97D8FDB25359081004DFB13 /* Native Email ApplicationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Native Email ApplicationUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E97D8FDF25359081004DFB13 /* Native_Email_ApplicationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Native_Email_ApplicationUITests.swift; sourceTree = "<group>"; };
 		E97D8FE125359081004DFB13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E97D8FF625359514004DFB13 /* DummiesHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummiesHelper.swift; sourceTree = "<group>"; };
-		E97D8FFE2535971E004DFB13 /* CDHelperEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDHelperEntity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,8 +135,6 @@
 		E97D8FF5253594FF004DFB13 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				E97D8FF625359514004DFB13 /* DummiesHelper.swift */,
-				E97D8FFE2535971E004DFB13 /* CDHelperEntity.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -275,10 +269,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E97D8FF725359514004DFB13 /* DummiesHelper.swift in Sources */,
 				E97D8FBF2535907E004DFB13 /* ViewController.swift in Sources */,
 				E97D8FBB2535907E004DFB13 /* AppDelegate.swift in Sources */,
-				E97D8FFF2535971E004DFB13 /* CDHelperEntity.swift in Sources */,
 				E97D8FC52535907E004DFB13 /* Native_Email_Application.xcdatamodeld in Sources */,
 				E97D8FBD2535907E004DFB13 /* SceneDelegate.swift in Sources */,
 			);

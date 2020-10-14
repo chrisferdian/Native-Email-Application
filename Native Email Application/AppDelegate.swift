@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        CDHelper.initializeWithMainContext(self.persistentContainer.viewContext) // New XCode 8/Swift 3 template
+//        CDHelper.initializeWithMainContext(self.persistentContainer.viewContext) // New XCode 8/Swift 3 template
         return true
     }
 

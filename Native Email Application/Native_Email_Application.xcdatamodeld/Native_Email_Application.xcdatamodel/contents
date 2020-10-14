@@ -1,21 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17192" systemVersion="19F101" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Messages" representedClassName=".Messages" isAbstract="YES" syncable="YES" codeGenerationType="class">
-        <attribute name="content" optional="YES" attributeType="String"/>
-        <attribute name="from" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="mId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="sendAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="subject" optional="YES" attributeType="String"/>
-        <relationship name="sender" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Users" inverseName="message" inverseEntity="Users"/>
-    </entity>
-    <entity name="Users" representedClassName=".Users" isAbstract="YES" syncable="YES" codeGenerationType="class">
-        <attribute name="email" optional="YES" attributeType="String"/>
-        <attribute name="name" optional="YES" attributeType="String"/>
-        <attribute name="userId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
-        <relationship name="message" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Messages" inverseName="sender" inverseEntity="Messages"/>
-    </entity>
-    <elements>
-        <element name="Users" positionX="-45" positionY="0" width="128" height="103"/>
-        <element name="Messages" positionX="257.91015625" positionY="9.74609375" width="128" height="133"/>
-    </elements>
+    <elements/>
 </model>
