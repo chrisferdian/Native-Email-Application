@@ -16,6 +16,14 @@
 		E97D8FCA25359081004DFB13 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E97D8FC825359081004DFB13 /* LaunchScreen.storyboard */; };
 		E97D8FD525359081004DFB13 /* Native_Email_ApplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97D8FD425359081004DFB13 /* Native_Email_ApplicationTests.swift */; };
 		E97D8FE025359081004DFB13 /* Native_Email_ApplicationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97D8FDF25359081004DFB13 /* Native_Email_ApplicationUITests.swift */; };
+		E9C90DCA2536E75C00D02A56 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C90DC92536E75C00D02A56 /* UITableView+Extensions.swift */; };
+		E9C90DD22536E7FB00D02A56 /* LoadingStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C90DD12536E7FB00D02A56 /* LoadingStateView.swift */; };
+		E9C90DD82536E80800D02A56 /* LoadingStateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9C90DD72536E80800D02A56 /* LoadingStateView.xib */; };
+		E9C90DDD2536E8BE00D02A56 /* NSObject+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C90DDC2536E8BE00D02A56 /* NSObject+Extensions.swift */; };
+		E9C90DE42536EA1D00D02A56 /* EmptyStateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9C90DE32536EA1D00D02A56 /* EmptyStateView.xib */; };
+		E9C90DE92536EA7500D02A56 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C90DE82536EA7500D02A56 /* EmptyStateView.swift */; };
+		E9C90DEE2536EC4000D02A56 /* RetryStateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9C90DED2536EC4000D02A56 /* RetryStateView.xib */; };
+		E9C90DF32536EDA700D02A56 /* RetryStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C90DF22536EDA700D02A56 /* RetryStateView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +59,14 @@
 		E97D8FDB25359081004DFB13 /* Native Email ApplicationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Native Email ApplicationUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E97D8FDF25359081004DFB13 /* Native_Email_ApplicationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Native_Email_ApplicationUITests.swift; sourceTree = "<group>"; };
 		E97D8FE125359081004DFB13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E9C90DC92536E75C00D02A56 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
+		E9C90DD12536E7FB00D02A56 /* LoadingStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingStateView.swift; sourceTree = "<group>"; };
+		E9C90DD72536E80800D02A56 /* LoadingStateView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingStateView.xib; sourceTree = "<group>"; };
+		E9C90DDC2536E8BE00D02A56 /* NSObject+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Extensions.swift"; sourceTree = "<group>"; };
+		E9C90DE32536EA1D00D02A56 /* EmptyStateView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyStateView.xib; sourceTree = "<group>"; };
+		E9C90DE82536EA7500D02A56 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
+		E9C90DED2536EC4000D02A56 /* RetryStateView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RetryStateView.xib; sourceTree = "<group>"; };
+		E9C90DF22536EDA700D02A56 /* RetryStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetryStateView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +117,7 @@
 		E97D8FB92535907E004DFB13 /* Native Email Application */ = {
 			isa = PBXGroup;
 			children = (
+				E9C90DC82536E74700D02A56 /* Extensions */,
 				E97D8FF5253594FF004DFB13 /* Helpers */,
 				E97D8FBA2535907E004DFB13 /* AppDelegate.swift */,
 				E97D8FBC2535907E004DFB13 /* SceneDelegate.swift */,
@@ -135,8 +152,47 @@
 		E97D8FF5253594FF004DFB13 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				E9C90DE22536EA0D00D02A56 /* RetryStateView */,
+				E9C90DE12536EA0200D02A56 /* EmptyStateView */,
+				E9C90DD62536E7FF00D02A56 /* LoadingStateView */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		E9C90DC82536E74700D02A56 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E9C90DC92536E75C00D02A56 /* UITableView+Extensions.swift */,
+				E9C90DDC2536E8BE00D02A56 /* NSObject+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E9C90DD62536E7FF00D02A56 /* LoadingStateView */ = {
+			isa = PBXGroup;
+			children = (
+				E9C90DD12536E7FB00D02A56 /* LoadingStateView.swift */,
+				E9C90DD72536E80800D02A56 /* LoadingStateView.xib */,
+			);
+			path = LoadingStateView;
+			sourceTree = "<group>";
+		};
+		E9C90DE12536EA0200D02A56 /* EmptyStateView */ = {
+			isa = PBXGroup;
+			children = (
+				E9C90DE32536EA1D00D02A56 /* EmptyStateView.xib */,
+				E9C90DE82536EA7500D02A56 /* EmptyStateView.swift */,
+			);
+			path = EmptyStateView;
+			sourceTree = "<group>";
+		};
+		E9C90DE22536EA0D00D02A56 /* RetryStateView */ = {
+			isa = PBXGroup;
+			children = (
+				E9C90DED2536EC4000D02A56 /* RetryStateView.xib */,
+				E9C90DF22536EDA700D02A56 /* RetryStateView.swift */,
+			);
+			path = RetryStateView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,8 +299,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E97D8FCA25359081004DFB13 /* LaunchScreen.storyboard in Resources */,
+				E9C90DE42536EA1D00D02A56 /* EmptyStateView.xib in Resources */,
 				E97D8FC725359081004DFB13 /* Assets.xcassets in Resources */,
+				E9C90DEE2536EC4000D02A56 /* RetryStateView.xib in Resources */,
 				E97D8FC22535907E004DFB13 /* Main.storyboard in Resources */,
+				E9C90DD82536E80800D02A56 /* LoadingStateView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,8 +328,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9C90DCA2536E75C00D02A56 /* UITableView+Extensions.swift in Sources */,
 				E97D8FBF2535907E004DFB13 /* ViewController.swift in Sources */,
+				E9C90DE92536EA7500D02A56 /* EmptyStateView.swift in Sources */,
+				E9C90DDD2536E8BE00D02A56 /* NSObject+Extensions.swift in Sources */,
 				E97D8FBB2535907E004DFB13 /* AppDelegate.swift in Sources */,
+				E9C90DD22536E7FB00D02A56 /* LoadingStateView.swift in Sources */,
+				E9C90DF32536EDA700D02A56 /* RetryStateView.swift in Sources */,
 				E97D8FC52535907E004DFB13 /* Native_Email_Application.xcdatamodeld in Sources */,
 				E97D8FBD2535907E004DFB13 /* SceneDelegate.swift in Sources */,
 			);

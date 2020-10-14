@@ -13,8 +13,17 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        testState()
     }
     
+    private func testState() {
+        tableView.setStateView(with: .loading)
+        DispatchQueue.main.asyncAfter(deadline: .now()+3) {
+            self.tableView.setStateView(with: .retry) {
+                print("RETRY")
+                self.testState()
+            }
+        }
+    }
 }
 
