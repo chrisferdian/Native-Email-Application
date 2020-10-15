@@ -21,8 +21,12 @@ class EmailListVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupNavigationBar()
         setupTableView()
         bindViewModel()
+    }
+    private func setupNavigationBar() {
+        title = "Inbox"
     }
     private func setupTableView() {
         self.tableView.register(cellType: ListTableViewCell.self)

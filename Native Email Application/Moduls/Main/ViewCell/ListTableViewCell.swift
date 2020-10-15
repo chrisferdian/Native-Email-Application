@@ -14,10 +14,11 @@ class ListTableViewCell: UITableViewCell {
     @IBOutlet weak var labelDate: UILabel!
     @IBOutlet weak var labelShortContent: UILabel!
     @IBOutlet weak var imageViewAvatar: UIImageView!
+    @IBOutlet weak var indicatorNew: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        indicatorNew.makeRounded()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
