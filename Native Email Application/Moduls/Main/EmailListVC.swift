@@ -55,5 +55,7 @@ extension EmailListVC: UITableViewDataSource {
 }
 
 extension EmailListVC: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return UITableView.automaticDimension
+    }
 }

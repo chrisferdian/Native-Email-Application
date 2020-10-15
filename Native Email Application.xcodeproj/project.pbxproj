@@ -34,6 +34,8 @@
 		E9C90E3B2537482A00D02A56 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C90E3A2537482A00D02A56 /* BaseCoordinator.swift */; };
 		E9C90E442537485100D02A56 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C90E432537485100D02A56 /* AppCoordinator.swift */; };
 		E9C90E49253748DC00D02A56 /* EmailListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C90E48253748DC00D02A56 /* EmailListCoordinator.swift */; };
+		E9C90E5725375A1D00D02A56 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C90E5625375A1D00D02A56 /* UIImageView+Extensions.swift */; };
+		E9C90E5C25375AEF00D02A56 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C90E5B25375AEE00D02A56 /* String+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +89,8 @@
 		E9C90E3A2537482A00D02A56 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		E9C90E432537485100D02A56 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		E9C90E48253748DC00D02A56 /* EmailListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailListCoordinator.swift; sourceTree = "<group>"; };
+		E9C90E5625375A1D00D02A56 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
+		E9C90E5B25375AEE00D02A56 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +188,8 @@
 			children = (
 				E9C90DC92536E75C00D02A56 /* UITableView+Extensions.swift */,
 				E9C90DDC2536E8BE00D02A56 /* NSObject+Extensions.swift */,
+				E9C90E5625375A1D00D02A56 /* UIImageView+Extensions.swift */,
+				E9C90E5B25375AEE00D02A56 /* String+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -396,8 +402,10 @@
 				E9C90E442537485100D02A56 /* AppCoordinator.swift in Sources */,
 				E9C90E192537407300D02A56 /* BaseViewModel.swift in Sources */,
 				E9C90DDD2536E8BE00D02A56 /* NSObject+Extensions.swift in Sources */,
+				E9C90E5725375A1D00D02A56 /* UIImageView+Extensions.swift in Sources */,
 				E9C90E1425373FEF00D02A56 /* EmailListVM.swift in Sources */,
 				E97D8FBB2535907E004DFB13 /* AppDelegate.swift in Sources */,
+				E9C90E5C25375AEF00D02A56 /* String+Extension.swift in Sources */,
 				E9C90E0B25373FDB00D02A56 /* EmailListVC.swift in Sources */,
 				E9C90DD22536E7FB00D02A56 /* LoadingStateView.swift in Sources */,
 				E9C90DF32536EDA700D02A56 /* RetryStateView.swift in Sources */,

@@ -12,6 +12,7 @@ struct EmailResponseElement: Codable {
     let avatar: String
     let content, email: String
     let isRead: Bool
+    let subject: String
 }
 
 typealias EmailResponse = [EmailResponseElement]
