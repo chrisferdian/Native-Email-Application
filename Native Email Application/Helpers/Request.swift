@@ -12,7 +12,7 @@ typealias Response<Value: Decodable> = (_ completionHandler: @escaping(Result<Va
 private let baseUrl = "https://5f86a59ec8a16a0016e6b823.mockapi.io/api"
 
 enum HTTPMethods: String {
-    case get = "GET", post = "POST", delete = "DELETE", patch = "PATCH"
+    case get = "GET", post = "POST", delete = "DELETE", put = "PUT"
 }
 
 @propertyWrapper

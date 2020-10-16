@@ -13,6 +13,8 @@ class EmailListVM: BaseViewModel {
     var state: ListProcessingState = .loading
     
     var didUpdateState: ((ListProcessingState, EmailResponse?) -> Void)?
+    @Request<EmailResponseElement>(url: "/emails", method: .put, body: nil, headers: nil)
+    var updateRequest
     
     init() {
         emailRequest { res in
@@ -42,5 +44,9 @@ class EmailListVM: BaseViewModel {
     
     func transform(input: Input) -> Output {
         return Output(emails: input.response, tableViewState: .loading)
+    }
+    
+    func makeRead(element: EmailResponseElement) {
+        
     }
 }

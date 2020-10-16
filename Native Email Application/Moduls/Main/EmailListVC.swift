@@ -18,6 +18,7 @@ class EmailListVC: UIViewController {
             }
         }
     }
+    var longPress:UILongPressGestureRecognizer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,9 +30,22 @@ class EmailListVC: UIViewController {
         title = "Inbox"
     }
     private func setupTableView() {
+        longPress = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress))
+        tableView.addGestureRecognizer(longPress)
         self.tableView.register(cellType: ListTableViewCell.self)
         self.tableView.delegate = self
         self.tableView.dataSource = self
+    }
+    @objc func handleLongPress(sender: UILongPressGestureRecognizer){
+        if longPress.state == .began {
+            let touchPoint = longPress.location(in: tableView)
+            if let indexPath = tableView.indexPathForRow(at: touchPoint) {
+                // your code here, get the row for the indexPath or do whatever you want
+                if let email = self.emails?[indexPath.row] {
+                    self.viewModel.makeRead(element: email)
+                }
+            }
+        }
     }
     private func bindViewModel() {
         viewModel.didUpdateState = { [weak self] (state, response) in
