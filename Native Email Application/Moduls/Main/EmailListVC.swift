@@ -50,7 +50,7 @@ class EmailListVC: UIViewController {
             if let indexPath = tableView.indexPathForRow(at: touchPoint) {
                 // your code here, get the row for the indexPath or do whatever you want
                 if let email = self.emails?[indexPath.row] {
-                    self.viewModel?.makeRead(element: email, index: indexPath)
+//                    self.viewModel?.makeRead(element: email, index: indexPath)
                 }
             }
         }
@@ -64,6 +64,12 @@ class EmailListVC: UIViewController {
             self?.emails?[index.row] = element
             DispatchQueue.main.async {
                 self?.tableView.reloadRows(at: [index], with: .fade)
+            }
+        }
+        viewModel?.didDeleted = { [weak self] (index, _) in
+            DispatchQueue.main.async {
+                self?.emails?.remove(at: index.row)
+                self?.tableView.deleteRows(at: [index], with: .automatic)
             }
         }
     }
@@ -98,6 +104,16 @@ extension EmailListVC: UITableViewDelegate {
             DispatchQueue.main.async {
                 
                 self.viewModel?.didTapToDetail?(email)
+            }
+        }
+    }
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == .delete) {
+            if let email = emails?[indexPath.row] {
+                self.viewModel?.makeDelete(element: email, index: indexPath)
             }
         }
     }

@@ -16,10 +16,13 @@ class EmailListVM: BaseViewModel {
     var emailRequest
     @Request<EmailResponseElement>(url: "emails", id: nil, method: .put, body: nil, headers: ["Content-Type": "application/x-www-form-urlencoded"])
     var updateRequest
+    @Request<EmailResponseElement>(url: "emails", method: .delete)
+    var deleteRequest
     
     var state: ListProcessingState = .loading
     var didUpdateState: ((ListProcessingState, EmailResponse?) -> Void)?
     var didUpdateRead: ((IndexPath, EmailResponseElement) -> Void)?
+    var didDeleted: ((IndexPath, EmailResponseElement) -> Void)?
     var didTapToDetail: ((EmailResponseElement) -> Void)?
 
     init() {
@@ -71,4 +74,17 @@ class EmailListVM: BaseViewModel {
         }
     }
     
+    func makeDelete(element: EmailResponseElement, index: IndexPath) {
+        _deleteRequest.setId(with: element.id)
+        deleteRequest { res in
+            switch res {
+            case .success(let response):
+                print(response)
+                self.didDeleted?(index, element)
+            case .failure(let error):
+                print("resErr")
+                print(error)
+            }
+        }
+    }
 }
