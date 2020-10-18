@@ -19,7 +19,8 @@ class EmailListVC: UIViewController {
         }
     }
     var longPress:UILongPressGestureRecognizer!
-    
+    let heavyImpact = UIImpactFeedbackGenerator(style: .heavy)
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBar()
@@ -50,7 +51,7 @@ class EmailListVC: UIViewController {
             if let indexPath = tableView.indexPathForRow(at: touchPoint) {
                 // your code here, get the row for the indexPath or do whatever you want
                 if let email = self.emails?[indexPath.row] {
-//                    self.viewModel?.makeRead(element: email, index: indexPath)
+                    self.heavyImpact.impactOccurred()
                 }
             }
         }
@@ -70,6 +71,9 @@ class EmailListVC: UIViewController {
             DispatchQueue.main.async {
                 self?.emails?.remove(at: index.row)
                 self?.tableView.deleteRows(at: [index], with: .automatic)
+                if ((self?.emails?.isEmpty) != nil) {
+                    self?.tableView.setStateView(with: .empty)
+                }
             }
         }
     }
