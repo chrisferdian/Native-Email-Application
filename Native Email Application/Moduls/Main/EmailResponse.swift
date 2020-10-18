@@ -8,11 +8,15 @@
 import Foundation
 // MARK: - EmailResponseElement
 struct EmailResponseElement: Codable {
-    let id, createdAt, name: String
-    let avatar: String
-    let content, email: String
-    let isRead: Bool
-    let subject: String
+    var id, createdAt, name: String
+    var avatar: String
+    var content, email: String
+    var isRead: String
+    var subject: String
+    
+    func getRead() -> Bool {
+        return Bool(isRead) ?? false
+    }
 }
 
 typealias EmailResponse = [EmailResponseElement]

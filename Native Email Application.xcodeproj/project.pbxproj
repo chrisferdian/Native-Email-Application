@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E95C1CEB253C94DD00244B8E /* Encodable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95C1CEA253C94DD00244B8E /* Encodable+Extensions.swift */; };
 		E97D8FBB2535907E004DFB13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97D8FBA2535907E004DFB13 /* AppDelegate.swift */; };
 		E97D8FBD2535907E004DFB13 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97D8FBC2535907E004DFB13 /* SceneDelegate.swift */; };
 		E97D8FC52535907E004DFB13 /* Native_Email_Application.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E97D8FC32535907E004DFB13 /* Native_Email_Application.xcdatamodeld */; };
@@ -56,6 +57,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E95C1CEA253C94DD00244B8E /* Encodable+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Extensions.swift"; sourceTree = "<group>"; };
 		E97D8FB72535907E004DFB13 /* Native Email Application.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Native Email Application.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E97D8FBA2535907E004DFB13 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E97D8FBC2535907E004DFB13 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 				E9C90DDC2536E8BE00D02A56 /* NSObject+Extensions.swift */,
 				E9C90E5625375A1D00D02A56 /* UIImageView+Extensions.swift */,
 				E9C90E5B25375AEE00D02A56 /* String+Extension.swift */,
+				E95C1CEA253C94DD00244B8E /* Encodable+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -404,6 +407,7 @@
 				E9C90DDD2536E8BE00D02A56 /* NSObject+Extensions.swift in Sources */,
 				E9C90E5725375A1D00D02A56 /* UIImageView+Extensions.swift in Sources */,
 				E9C90E1425373FEF00D02A56 /* EmailListVM.swift in Sources */,
+				E95C1CEB253C94DD00244B8E /* Encodable+Extensions.swift in Sources */,
 				E97D8FBB2535907E004DFB13 /* AppDelegate.swift in Sources */,
 				E9C90E5C25375AEF00D02A56 /* String+Extension.swift in Sources */,
 				E9C90E0B25373FDB00D02A56 /* EmailListVC.swift in Sources */,

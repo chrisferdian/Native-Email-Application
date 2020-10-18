@@ -18,6 +18,7 @@ class ListTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        selectionStyle = .gray
         indicatorNew.makeRounded()
     }
 
@@ -28,6 +29,7 @@ class ListTableViewCell: UITableViewCell {
     }
     
     func bindCell(with content: EmailResponseElement) {
+        indicatorNew.isHidden = content.getRead()
         labelName.text = content.name
         labelSubject.text = content.subject
         labelShortContent.text = content.content

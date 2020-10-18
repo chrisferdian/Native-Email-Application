@@ -7,14 +7,19 @@
 
 import Foundation
 
+struct HasWrapper {
+    
+}
+
 class EmailListVM: BaseViewModel {
     @Request<EmailResponse>(url: "/emails")
     var emailRequest
-    var state: ListProcessingState = .loading
-    
-    var didUpdateState: ((ListProcessingState, EmailResponse?) -> Void)?
-    @Request<EmailResponseElement>(url: "/emails", method: .put, body: nil, headers: nil)
+    @Request<EmailResponseElement>(url: "/emails", id: nil, method: .put, body: nil, headers: ["Content-Type": "application/x-www-form-urlencoded"])
     var updateRequest
+    
+    var state: ListProcessingState = .loading
+    var didUpdateState: ((ListProcessingState, EmailResponse?) -> Void)?
+    var didUpdateRead: ((IndexPath, EmailResponseElement) -> Void)?
     
     init() {
         emailRequest { res in
@@ -35,6 +40,7 @@ class EmailListVM: BaseViewModel {
     
     struct Input {
         let response: EmailResponse
+        var parameters:EmailResponseElement?
     }
     
     struct Output {
@@ -46,7 +52,21 @@ class EmailListVM: BaseViewModel {
         return Output(emails: input.response, tableViewState: .loading)
     }
     
-    func makeRead(element: EmailResponseElement) {
-        
+    func makeRead(element: EmailResponseElement, index: IndexPath) {
+        var elemet = element
+        elemet.isRead = "true"
+        let param = ["isRead": "true"]
+        _updateRequest.setParameters(body: param)
+        _updateRequest.setId(with: element.id)
+        updateRequest { res in
+            switch res {
+            case .success(let response):
+                print(response)
+                self.didUpdateRead?(index, elemet)
+            case .failure(let error):
+                print("resErr")
+                print(error)
+            }
+        }
     }
 }

@@ -30,8 +30,10 @@ class EmailListVC: UIViewController {
         title = "Inbox"
     }
     private func setupTableView() {
+        self.tableView.tableFooterView = UIView()
         longPress = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress))
         tableView.addGestureRecognizer(longPress)
+        self.tableView.setStateView(with: .loading)
         self.tableView.register(cellType: ListTableViewCell.self)
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -42,7 +44,7 @@ class EmailListVC: UIViewController {
             if let indexPath = tableView.indexPathForRow(at: touchPoint) {
                 // your code here, get the row for the indexPath or do whatever you want
                 if let email = self.emails?[indexPath.row] {
-                    self.viewModel.makeRead(element: email)
+                    self.viewModel.makeRead(element: email, index: indexPath)
                 }
             }
         }
@@ -51,6 +53,12 @@ class EmailListVC: UIViewController {
         viewModel.didUpdateState = { [weak self] (state, response) in
             self?.emails = response
             self?.tableView.setStateView(with: state)
+        }
+        viewModel.didUpdateRead = { [weak self] (index, element) in
+            self?.emails?[index.row] = element
+            DispatchQueue.main.async {
+                self?.tableView.reloadRows(at: [index], with: .fade)
+            }
         }
     }
 }
@@ -75,5 +83,8 @@ extension EmailListVC: UITableViewDataSource {
 extension EmailListVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return UITableView.automaticDimension
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.viewModel.makeRead(element: (self.emails?[indexPath.row])!, index: indexPath)
     }
 }

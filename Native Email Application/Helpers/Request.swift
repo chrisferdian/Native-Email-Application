@@ -22,6 +22,7 @@ internal struct Request<Value> where Value: Decodable {
 
     init(
         url: String,
+        id: String? = nil,
         method: HTTPMethods = .get,
         body: Data? = nil,
         headers: Headers? = nil
@@ -29,7 +30,6 @@ internal struct Request<Value> where Value: Decodable {
         guard let url = URL(string: String(baseUrl+url).addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "") else {
             precondition(false, "Must add a valid url.")
         }
-
         var aRequest = URLRequest(url: url)
         aRequest.httpMethod = method.rawValue
         aRequest.httpBody = body
@@ -37,7 +37,7 @@ internal struct Request<Value> where Value: Decodable {
         aRequest.allowsCellularAccess = true
         self.request = aRequest
     }
-
+    
     var wrappedValue: Response<Value> {
         get {
             return { completion in
@@ -57,5 +57,17 @@ internal struct Request<Value> where Value: Decodable {
                 .resume()
             }
         }
+    }
+    mutating func setId(with id: String) {
+        request.url?.appendPathComponent(id)
+    }
+    mutating func setParameters(body: [String: String]) {
+        var requestBodyComponent = URLComponents()
+        var items:[URLQueryItem] = []
+        body.forEach { (key, value) in
+            items.append(URLQueryItem(name: key, value: value))
+        }
+        requestBodyComponent.queryItems = items
+        self.request.httpBody = requestBodyComponent.query?.data(using: .utf8)
     }
 }
