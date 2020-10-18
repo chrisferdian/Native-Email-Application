@@ -26,6 +26,12 @@ class EmailListVC: UIViewController {
         setupTableView()
         bindViewModel()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let indexPath = tableView.indexPathForSelectedRow {
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
+    }
     private func setupNavigationBar() {
         title = "Inbox"
     }
@@ -90,6 +96,7 @@ extension EmailListVC: UITableViewDelegate {
                 self.viewModel?.makeRead(element: (self.emails?[indexPath.row])!, index: indexPath)
             }
             DispatchQueue.main.async {
+                
                 self.viewModel?.didTapToDetail?(email)
             }
         }
