@@ -10,6 +10,7 @@ import UIKit
 class EmailListVC: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var toolbar: UIToolbar!
     internal var viewModel: EmailListVM?
     private var emails: EmailResponse? = nil {
         didSet {
@@ -20,7 +21,23 @@ class EmailListVC: UIViewController {
     }
     var longPress:UILongPressGestureRecognizer!
     let heavyImpact = UIImpactFeedbackGenerator(style: .heavy)
-
+    var tableState: TableState = .normal {
+        didSet {
+            switch tableState {
+            case .normal:
+                self.tableView.allowsMultipleSelection = false
+                self.toolbar.isHidden = true
+                navigationItem.setLeftBarButton(editBarItem, animated: true)
+            case .selection:
+                self.tableView.allowsMultipleSelection = true
+                self.toolbar.isHidden = false
+                navigationItem.setLeftBarButton(cancelBarItem, animated: true)
+            }
+        }
+    }
+    var editBarItem:UIBarButtonItem!
+    var cancelBarItem:UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBar()
@@ -35,6 +52,9 @@ class EmailListVC: UIViewController {
     }
     private func setupNavigationBar() {
         title = "Inbox"
+        editBarItem = UIBarButtonItem(title: "Edit", style: .done, target: self, action: #selector(editAction))
+        cancelBarItem = UIBarButtonItem(title: "Cancel", style: .done, target: self, action: #selector(cancelAction))
+        navigationItem.leftBarButtonItem = editBarItem
     }
     private func setupTableView() {
         self.tableView.tableFooterView = UIView()
@@ -50,8 +70,9 @@ class EmailListVC: UIViewController {
             let touchPoint = longPress.location(in: tableView)
             if let indexPath = tableView.indexPathForRow(at: touchPoint) {
                 // your code here, get the row for the indexPath or do whatever you want
-                if let email = self.emails?[indexPath.row] {
+                if let _ = self.emails?[indexPath.row] {
                     self.heavyImpact.impactOccurred()
+                    self.tableState = .selection
                 }
             }
         }
@@ -77,6 +98,12 @@ class EmailListVC: UIViewController {
             }
         }
     }
+    @objc func editAction() {
+        tableState = .selection
+    }
+    @objc func cancelAction() {
+            tableState = .normal
+    }
 }
 
 extension EmailListVC: UITableViewDataSource {
@@ -101,13 +128,15 @@ extension EmailListVC: UITableViewDelegate {
         return UITableView.automaticDimension
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let email = emails?[indexPath.row] {
-            if !email.getRead() {
-                self.viewModel?.makeRead(element: (self.emails?[indexPath.row])!, index: indexPath)
-            }
-            DispatchQueue.main.async {
-                
-                self.viewModel?.didTapToDetail?(email)
+        if tableState == .normal {
+            if let email = emails?[indexPath.row] {
+                if !email.getRead() {
+                    self.viewModel?.makeRead(element: (self.emails?[indexPath.row])!, index: indexPath)
+                }
+                DispatchQueue.main.async {
+                    
+                    self.viewModel?.didTapToDetail?(email)
+                }
             }
         }
     }

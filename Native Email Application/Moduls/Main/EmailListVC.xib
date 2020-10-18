@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EmailListVC" customModule="Native_Email_Application" customModuleProvider="target">
             <connections>
                 <outlet property="tableView" destination="CYG-LB-otD" id="FRC-W6-7qu"/>
+                <outlet property="toolbar" destination="vOK-N8-JTo" id="dvr-Ne-pP2"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,18 +20,31 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CYG-LB-otD">
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="td1-9K-Dbl">
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                </tableView>
+                    <subviews>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CYG-LB-otD">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        </tableView>
+                        <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vOK-N8-JTo">
+                            <rect key="frame" x="0.0" y="774" width="414" height="44"/>
+                            <items>
+                                <barButtonItem title="Read" id="nN4-hP-8Xb"/>
+                                <barButtonItem style="plain" systemItem="flexibleSpace" id="gcM-S6-Ujd"/>
+                                <barButtonItem title="Delete" id="hw4-K4-RBO"/>
+                            </items>
+                        </toolbar>
+                    </subviews>
+                </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="CYG-LB-otD" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Kl7-cl-4yY"/>
-                <constraint firstItem="CYG-LB-otD" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="L94-DO-HGR"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="CYG-LB-otD" secondAttribute="trailing" id="xAV-XJ-Oyt"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="CYG-LB-otD" secondAttribute="bottom" id="ycQ-rE-Gy6"/>
+                <constraint firstItem="td1-9K-Dbl" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="P64-GW-i2j"/>
+                <constraint firstItem="td1-9K-Dbl" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="X6y-X2-nff"/>
+                <constraint firstItem="td1-9K-Dbl" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="a37-Es-wK0"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="td1-9K-Dbl" secondAttribute="bottom" id="gV4-UD-F5y"/>
             </constraints>
             <point key="canvasLocation" x="139" y="99"/>
         </view>

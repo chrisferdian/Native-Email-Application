@@ -252,8 +252,8 @@
 		E9C90E0825373FAA00D02A56 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				E9C90E48253748DC00D02A56 /* EmailListCoordinator.swift */,
 				E9C90E1D2537467500D02A56 /* ViewCell */,
+				E9C90E48253748DC00D02A56 /* EmailListCoordinator.swift */,
 				E9C90DFD25370D4E00D02A56 /* EmailResponse.swift */,
 				E9C90E1325373FEF00D02A56 /* EmailListVM.swift */,
 				E9C90E0925373FDB00D02A56 /* EmailListVC.swift */,

@@ -63,3 +63,8 @@ enum ListProcessingState {
     case retry
     case loading
 }
+
+enum TableState {
+    case normal
+    case selection
+}
