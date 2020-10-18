@@ -19,11 +19,11 @@ class AppCoordinator : BaseCoordinator {
         // preparing root view
         let navigationController = UINavigationController()
         let myCoordinator = EmailListCoordinator(navigationController: navigationController)
-
+        
         // store child coordinator
         self.store(coordinator: myCoordinator)
         myCoordinator.start()
-
+        
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
 

@@ -12,15 +12,16 @@ struct HasWrapper {
 }
 
 class EmailListVM: BaseViewModel {
-    @Request<EmailResponse>(url: "/emails")
+    @Request<EmailResponse>(url: "emails")
     var emailRequest
-    @Request<EmailResponseElement>(url: "/emails", id: nil, method: .put, body: nil, headers: ["Content-Type": "application/x-www-form-urlencoded"])
+    @Request<EmailResponseElement>(url: "emails", id: nil, method: .put, body: nil, headers: ["Content-Type": "application/x-www-form-urlencoded"])
     var updateRequest
     
     var state: ListProcessingState = .loading
     var didUpdateState: ((ListProcessingState, EmailResponse?) -> Void)?
     var didUpdateRead: ((IndexPath, EmailResponseElement) -> Void)?
-    
+    var didTapToDetail: ((EmailResponseElement) -> Void)?
+
     init() {
         emailRequest { res in
             switch res {
@@ -57,7 +58,7 @@ class EmailListVM: BaseViewModel {
         elemet.isRead = "true"
         let param = ["isRead": "true"]
         _updateRequest.setParameters(body: param)
-        _updateRequest.setId(with: element.id)
+        _updateRequest.setId(with: elemet.id)
         updateRequest { res in
             switch res {
             case .success(let response):
@@ -69,4 +70,5 @@ class EmailListVM: BaseViewModel {
             }
         }
     }
+    
 }

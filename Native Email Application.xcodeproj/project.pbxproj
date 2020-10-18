@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		E95C1CEB253C94DD00244B8E /* Encodable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95C1CEA253C94DD00244B8E /* Encodable+Extensions.swift */; };
+		E95C1CF2253CA1DC00244B8E /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95C1CF0253CA1DC00244B8E /* DetailsViewController.swift */; };
+		E95C1CF3253CA1DC00244B8E /* DetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E95C1CF1253CA1DC00244B8E /* DetailsViewController.xib */; };
+		E95C1CFB253CA1EC00244B8E /* DetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95C1CFA253CA1EC00244B8E /* DetailCoordinator.swift */; };
 		E97D8FBB2535907E004DFB13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97D8FBA2535907E004DFB13 /* AppDelegate.swift */; };
 		E97D8FBD2535907E004DFB13 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97D8FBC2535907E004DFB13 /* SceneDelegate.swift */; };
 		E97D8FC52535907E004DFB13 /* Native_Email_Application.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E97D8FC32535907E004DFB13 /* Native_Email_Application.xcdatamodeld */; };
@@ -58,6 +61,9 @@
 
 /* Begin PBXFileReference section */
 		E95C1CEA253C94DD00244B8E /* Encodable+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Extensions.swift"; sourceTree = "<group>"; };
+		E95C1CF0253CA1DC00244B8E /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		E95C1CF1253CA1DC00244B8E /* DetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailsViewController.xib; sourceTree = "<group>"; };
+		E95C1CFA253CA1EC00244B8E /* DetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCoordinator.swift; sourceTree = "<group>"; };
 		E97D8FB72535907E004DFB13 /* Native Email Application.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Native Email Application.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E97D8FBA2535907E004DFB13 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E97D8FBC2535907E004DFB13 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -120,6 +126,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E95C1CEF253CA1C700244B8E /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				E95C1CF0253CA1DC00244B8E /* DetailsViewController.swift */,
+				E95C1CF1253CA1DC00244B8E /* DetailsViewController.xib */,
+				E95C1CFA253CA1EC00244B8E /* DetailCoordinator.swift */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
 		E97D8FAE2535907E004DFB13 = {
 			isa = PBXGroup;
 			children = (
@@ -227,6 +243,7 @@
 		E9C90DFC25370D4000D02A56 /* Moduls */ = {
 			isa = PBXGroup;
 			children = (
+				E95C1CEF253CA1C700244B8E /* Details */,
 				E9C90E0825373FAA00D02A56 /* Main */,
 			);
 			path = Moduls;
@@ -376,6 +393,7 @@
 				E9C90DEE2536EC4000D02A56 /* RetryStateView.xib in Resources */,
 				E9C90E212537468B00D02A56 /* ListTableViewCell.xib in Resources */,
 				E9C90DD82536E80800D02A56 /* LoadingStateView.xib in Resources */,
+				E95C1CF3253CA1DC00244B8E /* DetailsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,6 +421,7 @@
 				E9C90DCA2536E75C00D02A56 /* UITableView+Extensions.swift in Sources */,
 				E9C90DE92536EA7500D02A56 /* EmptyStateView.swift in Sources */,
 				E9C90E442537485100D02A56 /* AppCoordinator.swift in Sources */,
+				E95C1CF2253CA1DC00244B8E /* DetailsViewController.swift in Sources */,
 				E9C90E192537407300D02A56 /* BaseViewModel.swift in Sources */,
 				E9C90DDD2536E8BE00D02A56 /* NSObject+Extensions.swift in Sources */,
 				E9C90E5725375A1D00D02A56 /* UIImageView+Extensions.swift in Sources */,
@@ -412,6 +431,7 @@
 				E9C90E5C25375AEF00D02A56 /* String+Extension.swift in Sources */,
 				E9C90E0B25373FDB00D02A56 /* EmailListVC.swift in Sources */,
 				E9C90DD22536E7FB00D02A56 /* LoadingStateView.swift in Sources */,
+				E95C1CFB253CA1EC00244B8E /* DetailCoordinator.swift in Sources */,
 				E9C90DF32536EDA700D02A56 /* RetryStateView.swift in Sources */,
 				E9C90DFE25370D4E00D02A56 /* EmailResponse.swift in Sources */,
 				E9C90DF825370BAE00D02A56 /* Request.swift in Sources */,

@@ -9,7 +9,7 @@ import Foundation
 
 typealias Headers = Dictionary<String, String>
 typealias Response<Value: Decodable> = (_ completionHandler: @escaping(Result<Value, Error>) -> Void) -> Void
-private let baseUrl = "https://5f86a59ec8a16a0016e6b823.mockapi.io/api"
+private let baseUrl = "https://5f86a59ec8a16a0016e6b823.mockapi.io/api/"
 
 enum HTTPMethods: String {
     case get = "GET", post = "POST", delete = "DELETE", put = "PUT"
@@ -19,7 +19,8 @@ enum HTTPMethods: String {
 internal struct Request<Value> where Value: Decodable {
 
     private var request: URLRequest
-
+    private var endPoint: String?
+    
     init(
         url: String,
         id: String? = nil,
@@ -27,6 +28,7 @@ internal struct Request<Value> where Value: Decodable {
         body: Data? = nil,
         headers: Headers? = nil
     ) {
+        self.endPoint = url
         guard let url = URL(string: String(baseUrl+url).addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "") else {
             precondition(false, "Must add a valid url.")
         }
@@ -59,7 +61,24 @@ internal struct Request<Value> where Value: Decodable {
         }
     }
     mutating func setId(with id: String) {
-        request.url?.appendPathComponent(id)
+        print(self.request.url!)
+        if self.request.url?.lastPathComponent == endPoint {
+            if self.request.url?.lastPathComponent != id {
+                request.url?.appendPathComponent(id)
+                return
+            }
+            if self.request.url?.lastPathComponent == id {
+                self.request.url = self.request.url?.deletingLastPathComponent()
+                request.url?.appendPathComponent(id)
+                return
+            }
+        } else {
+            if self.request.url?.lastPathComponent != id {
+                self.request.url = self.request.url?.deletingLastPathComponent()
+                request.url?.appendPathComponent(id)
+                return
+            }
+        }
     }
     mutating func setParameters(body: [String: String]) {
         var requestBodyComponent = URLComponents()

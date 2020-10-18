@@ -10,7 +10,7 @@ import UIKit
 class EmailListVC: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    private let viewModel: EmailListVM = EmailListVM()
+    internal var viewModel: EmailListVM?
     private var emails: EmailResponse? = nil {
         didSet {
             DispatchQueue.main.async {
@@ -44,17 +44,17 @@ class EmailListVC: UIViewController {
             if let indexPath = tableView.indexPathForRow(at: touchPoint) {
                 // your code here, get the row for the indexPath or do whatever you want
                 if let email = self.emails?[indexPath.row] {
-                    self.viewModel.makeRead(element: email, index: indexPath)
+                    self.viewModel?.makeRead(element: email, index: indexPath)
                 }
             }
         }
     }
     private func bindViewModel() {
-        viewModel.didUpdateState = { [weak self] (state, response) in
+        viewModel?.didUpdateState = { [weak self] (state, response) in
             self?.emails = response
             self?.tableView.setStateView(with: state)
         }
-        viewModel.didUpdateRead = { [weak self] (index, element) in
+        viewModel?.didUpdateRead = { [weak self] (index, element) in
             self?.emails?[index.row] = element
             DispatchQueue.main.async {
                 self?.tableView.reloadRows(at: [index], with: .fade)
@@ -85,6 +85,13 @@ extension EmailListVC: UITableViewDelegate {
         return UITableView.automaticDimension
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.viewModel.makeRead(element: (self.emails?[indexPath.row])!, index: indexPath)
+        if let email = emails?[indexPath.row] {
+            if !email.getRead() {
+                self.viewModel?.makeRead(element: (self.emails?[indexPath.row])!, index: indexPath)
+            }
+            DispatchQueue.main.async {
+                self.viewModel?.didTapToDetail?(email)
+            }
+        }
     }
 }
