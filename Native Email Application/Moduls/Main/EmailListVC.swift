@@ -56,7 +56,6 @@ class EmailListVC: UIViewController {
         title = "Inbox"
         editBarItem = UIBarButtonItem(title: "Edit", style: .done, target: self, action: #selector(editAction))
         cancelBarItem = UIBarButtonItem(title: "Cancel", style: .done, target: self, action: #selector(cancelAction))
-        navigationItem.leftBarButtonItem = editBarItem
     }
     private func setupTableView() {
         self.tableView.tableFooterView = UIView()
@@ -83,6 +82,11 @@ class EmailListVC: UIViewController {
         viewModel?.didUpdateState = { [weak self] (state, response) in
             self?.emails = response
             self?.tableView.setStateView(with: state)
+            if state == .success {
+                DispatchQueue.main.async {
+                    self?.navigationItem.leftBarButtonItem = self?.editBarItem
+                }
+            }
         }
         viewModel?.didUpdateRead = { [weak self] (index, element) in
             self?.emails?[index.row] = element

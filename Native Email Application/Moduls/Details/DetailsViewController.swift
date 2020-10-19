@@ -9,23 +9,22 @@ import UIKit
 
 class DetailsViewController: UIViewController {
 
+    @IBOutlet weak var imageViewAvatar: UIImageView!
+    @IBOutlet weak var labelSubject:UILabel!
+    @IBOutlet weak var labelEmail:UILabel!
+    @IBOutlet weak var textViewContent: UITextView!
+    
     var content: EmailResponseElement?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        imageViewAvatar.makeRounded()
+        labelEmail.text = content?.email
+        labelSubject.text = content?.subject
+        textViewContent.attributedText = content?.content.html2AttributedString
+        if let url = content?.avatar {
+            imageViewAvatar.downloaded(from: url)
+        }
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
 }

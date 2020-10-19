@@ -32,7 +32,7 @@ class ListTableViewCell: UITableViewCell {
         indicatorNew.isHidden = content.getRead()
         labelName.text = content.name
         labelSubject.text = content.subject
-        labelShortContent.text = content.content
+        labelShortContent.text = content.content.html2String
         labelDate.text = content.createdAt.toDate().moment
         imageViewAvatar.makeRounded()
         imageViewAvatar.downloaded(from: content.avatar)
