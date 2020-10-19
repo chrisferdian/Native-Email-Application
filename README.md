@@ -10,3 +10,4 @@ This project just for PreTest.
 This project write in Swift 5 and Xcode 12.0.1
 
 > UIKit
+> 28.9% Test Coverage
