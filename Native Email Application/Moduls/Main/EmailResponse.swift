@@ -7,7 +7,7 @@
 
 import Foundation
 // MARK: - EmailResponseElement
-struct EmailResponseElement: Codable {
+struct EmailResponseElement: Codable, Equatable {
     var id, createdAt, name: String
     var avatar: String
     var content, email: String

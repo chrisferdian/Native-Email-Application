@@ -30,9 +30,17 @@
                         <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vOK-N8-JTo">
                             <rect key="frame" x="0.0" y="774" width="414" height="44"/>
                             <items>
-                                <barButtonItem title="Read" id="nN4-hP-8Xb"/>
+                                <barButtonItem title="Read" id="nN4-hP-8Xb">
+                                    <connections>
+                                        <action selector="didReadTapped" destination="-1" id="U1z-Po-R9n"/>
+                                    </connections>
+                                </barButtonItem>
                                 <barButtonItem style="plain" systemItem="flexibleSpace" id="gcM-S6-Ujd"/>
-                                <barButtonItem title="Delete" id="hw4-K4-RBO"/>
+                                <barButtonItem title="Delete" id="hw4-K4-RBO">
+                                    <connections>
+                                        <action selector="didDeleteTapped" destination="-1" id="ivh-LF-p3m"/>
+                                    </connections>
+                                </barButtonItem>
                             </items>
                         </toolbar>
                     </subviews>

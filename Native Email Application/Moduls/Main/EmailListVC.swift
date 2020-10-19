@@ -28,6 +28,7 @@ class EmailListVC: UIViewController {
                 self.tableView.allowsMultipleSelection = false
                 self.toolbar.isHidden = true
                 navigationItem.setLeftBarButton(editBarItem, animated: true)
+                self.selectedEmail.removeAll()
             case .selection:
                 self.tableView.allowsMultipleSelection = true
                 self.toolbar.isHidden = false
@@ -37,6 +38,7 @@ class EmailListVC: UIViewController {
     }
     var editBarItem:UIBarButtonItem!
     var cancelBarItem:UIBarButtonItem!
+    var selectedEmail:[EmailResponseElement] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -89,11 +91,17 @@ class EmailListVC: UIViewController {
             }
         }
         viewModel?.didDeleted = { [weak self] (index, _) in
-            DispatchQueue.main.async {
-                self?.emails?.remove(at: index.row)
-                self?.tableView.deleteRows(at: [index], with: .automatic)
-                if ((self?.emails?.isEmpty) != nil) {
-                    self?.tableView.setStateView(with: .empty)
+            if self?.tableState == .normal {
+                DispatchQueue.main.async {
+                    if self?.tableState == .normal {
+                        if let _ = self?.emails?[index.row] {
+                            self?.emails?.remove(at: index.row)
+                            self?.tableView.deleteRows(at: [index], with: .automatic)
+                            if (self?.emails?.isEmpty ?? false) {
+                                self?.tableView.setStateView(with: .empty)
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -102,7 +110,35 @@ class EmailListVC: UIViewController {
         tableState = .selection
     }
     @objc func cancelAction() {
-            tableState = .normal
+        tableState = .normal
+    }
+    @IBAction func didReadTapped() {
+        if let selected = tableView.indexPathsForSelectedRows {
+            print(selected)
+            selected.forEach { (indexPath) in
+                if let email = emails?[indexPath.row] {
+                    if !email.getRead() {
+                        DispatchQueue.main.async {
+                            self.viewModel?.makeRead(element: email, index: indexPath)
+                        }
+                    }
+                }
+            }
+            DispatchQueue.main.async {
+                self.tableState = .normal
+            }
+        }
+    }
+    @IBAction func didDeleteTapped() {
+        if !self.selectedEmail.isEmpty {
+            selectedEmail.forEach { (email) in
+                if let i = self.emails?.firstIndex(of: email) {
+                    self.emails?.remove(at: i)
+                    self.viewModel?.makeDelete(element: email, index: IndexPath(row: i, section: 0))
+                    self.tableView.deleteRows(at: [IndexPath(row: i, section: 0)], with: .automatic)
+                }
+            }
+        }
     }
 }
 
@@ -128,7 +164,8 @@ extension EmailListVC: UITableViewDelegate {
         return UITableView.automaticDimension
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if tableState == .normal {
+        switch tableState {
+        case .normal:
             if let email = emails?[indexPath.row] {
                 if !email.getRead() {
                     self.viewModel?.makeRead(element: (self.emails?[indexPath.row])!, index: indexPath)
@@ -138,6 +175,11 @@ extension EmailListVC: UITableViewDelegate {
                     self.viewModel?.didTapToDetail?(email)
                 }
             }
+        case .selection:
+            if let email = emails?[indexPath.row] {
+                self.selectedEmail.append(email)
+            }
+            print(tableState.hashValue)
         }
     }
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
