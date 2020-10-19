@@ -17,7 +17,6 @@
 		E97D8FC725359081004DFB13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E97D8FC625359081004DFB13 /* Assets.xcassets */; };
 		E97D8FCA25359081004DFB13 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E97D8FC825359081004DFB13 /* LaunchScreen.storyboard */; };
 		E97D8FD525359081004DFB13 /* Native_Email_ApplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97D8FD425359081004DFB13 /* Native_Email_ApplicationTests.swift */; };
-		E97D8FE025359081004DFB13 /* Native_Email_ApplicationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97D8FDF25359081004DFB13 /* Native_Email_ApplicationUITests.swift */; };
 		E9C90DCA2536E75C00D02A56 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C90DC92536E75C00D02A56 /* UITableView+Extensions.swift */; };
 		E9C90DD22536E7FB00D02A56 /* LoadingStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C90DD12536E7FB00D02A56 /* LoadingStateView.swift */; };
 		E9C90DD82536E80800D02A56 /* LoadingStateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9C90DD72536E80800D02A56 /* LoadingStateView.xib */; };
@@ -50,13 +49,6 @@
 			remoteGlobalIDString = E97D8FB62535907E004DFB13;
 			remoteInfo = "Native Email Application";
 		};
-		E97D8FDC25359081004DFB13 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E97D8FAF2535907E004DFB13 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E97D8FB62535907E004DFB13;
-			remoteInfo = "Native Email Application";
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -74,9 +66,6 @@
 		E97D8FD025359081004DFB13 /* Native Email ApplicationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Native Email ApplicationTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E97D8FD425359081004DFB13 /* Native_Email_ApplicationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Native_Email_ApplicationTests.swift; sourceTree = "<group>"; };
 		E97D8FD625359081004DFB13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E97D8FDB25359081004DFB13 /* Native Email ApplicationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Native Email ApplicationUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E97D8FDF25359081004DFB13 /* Native_Email_ApplicationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Native_Email_ApplicationUITests.swift; sourceTree = "<group>"; };
-		E97D8FE125359081004DFB13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E9C90DC92536E75C00D02A56 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
 		E9C90DD12536E7FB00D02A56 /* LoadingStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingStateView.swift; sourceTree = "<group>"; };
 		E9C90DD72536E80800D02A56 /* LoadingStateView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingStateView.xib; sourceTree = "<group>"; };
@@ -116,13 +105,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E97D8FD825359081004DFB13 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -141,7 +123,6 @@
 			children = (
 				E97D8FB92535907E004DFB13 /* Native Email Application */,
 				E97D8FD325359081004DFB13 /* Native Email ApplicationTests */,
-				E97D8FDE25359081004DFB13 /* Native Email ApplicationUITests */,
 				E97D8FB82535907E004DFB13 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -151,7 +132,6 @@
 			children = (
 				E97D8FB72535907E004DFB13 /* Native Email Application.app */,
 				E97D8FD025359081004DFB13 /* Native Email ApplicationTests.xctest */,
-				E97D8FDB25359081004DFB13 /* Native Email ApplicationUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -178,15 +158,6 @@
 				E97D8FD625359081004DFB13 /* Info.plist */,
 			);
 			path = "Native Email ApplicationTests";
-			sourceTree = "<group>";
-		};
-		E97D8FDE25359081004DFB13 /* Native Email ApplicationUITests */ = {
-			isa = PBXGroup;
-			children = (
-				E97D8FDF25359081004DFB13 /* Native_Email_ApplicationUITests.swift */,
-				E97D8FE125359081004DFB13 /* Info.plist */,
-			);
-			path = "Native Email ApplicationUITests";
 			sourceTree = "<group>";
 		};
 		E97D8FF5253594FF004DFB13 /* Helpers */ = {
@@ -321,24 +292,6 @@
 			productReference = E97D8FD025359081004DFB13 /* Native Email ApplicationTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		E97D8FDA25359081004DFB13 /* Native Email ApplicationUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E97D8FEA25359081004DFB13 /* Build configuration list for PBXNativeTarget "Native Email ApplicationUITests" */;
-			buildPhases = (
-				E97D8FD725359081004DFB13 /* Sources */,
-				E97D8FD825359081004DFB13 /* Frameworks */,
-				E97D8FD925359081004DFB13 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E97D8FDD25359081004DFB13 /* PBXTargetDependency */,
-			);
-			name = "Native Email ApplicationUITests";
-			productName = "Native Email ApplicationUITests";
-			productReference = E97D8FDB25359081004DFB13 /* Native Email ApplicationUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -352,10 +305,6 @@
 						CreatedOnToolsVersion = 12.0.1;
 					};
 					E97D8FCF25359081004DFB13 = {
-						CreatedOnToolsVersion = 12.0.1;
-						TestTargetID = E97D8FB62535907E004DFB13;
-					};
-					E97D8FDA25359081004DFB13 = {
 						CreatedOnToolsVersion = 12.0.1;
 						TestTargetID = E97D8FB62535907E004DFB13;
 					};
@@ -376,7 +325,6 @@
 			targets = (
 				E97D8FB62535907E004DFB13 /* Native Email Application */,
 				E97D8FCF25359081004DFB13 /* Native Email ApplicationTests */,
-				E97D8FDA25359081004DFB13 /* Native Email ApplicationUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -398,13 +346,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		E97D8FCE25359081004DFB13 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E97D8FD925359081004DFB13 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -452,14 +393,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E97D8FD725359081004DFB13 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E97D8FE025359081004DFB13 /* Native_Email_ApplicationUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -467,11 +400,6 @@
 			isa = PBXTargetDependency;
 			target = E97D8FB62535907E004DFB13 /* Native Email Application */;
 			targetProxy = E97D8FD125359081004DFB13 /* PBXContainerItemProxy */;
-		};
-		E97D8FDD25359081004DFB13 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E97D8FB62535907E004DFB13 /* Native Email Application */;
-			targetProxy = E97D8FDC25359081004DFB13 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -685,46 +613,6 @@
 			};
 			name = Release;
 		};
-		E97D8FEB25359081004DFB13 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8GH3U9J536;
-				INFOPLIST_FILE = "Native Email ApplicationUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "co.id.chrizers.Native-Email-ApplicationUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Native Email Application";
-			};
-			name = Debug;
-		};
-		E97D8FEC25359081004DFB13 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8GH3U9J536;
-				INFOPLIST_FILE = "Native Email ApplicationUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "co.id.chrizers.Native-Email-ApplicationUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Native Email Application";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -751,15 +639,6 @@
 			buildConfigurations = (
 				E97D8FE825359081004DFB13 /* Debug */,
 				E97D8FE925359081004DFB13 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E97D8FEA25359081004DFB13 /* Build configuration list for PBXNativeTarget "Native Email ApplicationUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E97D8FEB25359081004DFB13 /* Debug */,
-				E97D8FEC25359081004DFB13 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
